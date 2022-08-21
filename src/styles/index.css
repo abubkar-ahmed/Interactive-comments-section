@@ -1,0 +1,474 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16;
+  background-color: #f5f6fa;
+}
+
+.App {
+  margin: 7rem 0;
+}
+
+.App .main-container {
+  width: 668px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+.App .main-container .comment-container .comment, .App .main-container .comment-container .replay-comment {
+  padding: 0.7rem;
+  padding-left: 4rem;
+  position: relative;
+  background-color: white;
+  border-radius: 0.7rem;
+  min-height: 150px;
+}
+
+.App .main-container .comment-container .comment .info, .App .main-container .comment-container .replay-comment .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.App .main-container .comment-container .comment .info img, .App .main-container .comment-container .replay-comment .info img {
+  width: 35px;
+}
+
+.App .main-container .comment-container .comment .info h1, .App .main-container .comment-container .replay-comment .info h1 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.App .main-container .comment-container .comment p, .App .main-container .comment-container .replay-comment p {
+  font-size: 16px;
+  color: #67727e;
+  margin-right: 2rem;
+  line-height: 1.3rem;
+}
+
+.App .main-container .comment-container .comment .score, .App .main-container .comment-container .replay-comment .score {
+  height: 80%;
+  position: absolute;
+  left: 17px;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f5f6fa;
+  -webkit-transform: translate(0, 15%);
+          transform: translate(0, 15%);
+  width: 34px;
+  gap: 0.5rem;
+  border-radius: 0.7rem;
+}
+
+.App .main-container .comment-container .comment .score span, .App .main-container .comment-container .replay-comment .score span {
+  color: #80808080;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: 0.4s ease all;
+  transition: 0.4s ease all;
+}
+
+.App .main-container .comment-container .comment .score span:hover, .App .main-container .comment-container .replay-comment .score span:hover {
+  color: #5457b6;
+}
+
+.App .main-container .comment-container .comment .score span.score-number, .App .main-container .comment-container .replay-comment .score span.score-number {
+  color: #5457b6;
+  cursor: default;
+}
+
+.App .main-container .comment-container .comment .replay, .App .main-container .comment-container .replay-comment .replay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.4rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 1rem;
+  right: 17px;
+  cursor: pointer;
+  -webkit-transition: 0.4s ease all;
+  transition: 0.4s ease all;
+}
+
+.App .main-container .comment-container .comment .replay:hover, .App .main-container .comment-container .replay-comment .replay:hover {
+  opacity: 0.5;
+}
+
+.App .main-container .comment-container .comment .replay span, .App .main-container .comment-container .replay-comment .replay span {
+  color: #5457b6;
+  font-weight: 500;
+}
+
+.App .main-container .comment-container .comment .replay i, .App .main-container .comment-container .replay-comment .replay i {
+  color: #5457b6;
+}
+
+.App .main-container .comment-container .comment .control, .App .main-container .comment-container .replay-comment .control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 1rem;
+  right: 17px;
+  cursor: pointer;
+}
+
+.App .main-container .comment-container .comment .control div, .App .main-container .comment-container .replay-comment .control div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.4rem;
+  -webkit-transition: 0.4s ease all;
+  transition: 0.4s ease all;
+}
+
+.App .main-container .comment-container .comment .control div:hover, .App .main-container .comment-container .replay-comment .control div:hover {
+  opacity: 0.5;
+}
+
+.App .main-container .comment-container .comment .control div.delete, .App .main-container .comment-container .replay-comment .control div.delete {
+  color: #ed6468;
+  font-weight: 500;
+}
+
+.App .main-container .comment-container .comment .control div.edit, .App .main-container .comment-container .replay-comment .control div.edit {
+  color: #5457b6;
+  font-weight: 500;
+}
+
+.App .main-container .comment-container .replay-comment {
+  width: 90%;
+  margin-top: 1rem;
+  margin-left: auto;
+}
+
+.App .main-container .comment-container .replay-comment::before {
+  content: '';
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  background-color: #c3c4ef;
+  left: -35px;
+  top: 0;
+}
+
+.App .main-container .comment-container .update-replay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.App .main-container .comment-container .update-replay textarea {
+  resize: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #c3c4ef;
+  border-radius: 0.5rem;
+  width: 500px;
+  min-height: 100px;
+}
+
+.App .main-container .comment-container .update-replay textarea:focus {
+  outline: none;
+  border: 1px solid #5457b6;
+}
+
+.App .main-container .comment-container .update-replay button {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.7rem 1.2rem;
+  background-color: #5457b6;
+  border: none;
+  color: white;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  -webkit-transition: 0.4s ease all;
+  transition: 0.4s ease all;
+}
+
+.App .main-container .comment-container .update-replay button:hover {
+  opacity: 0.5;
+}
+
+.App .make-comment {
+  width: 668px;
+  margin: auto;
+  margin-top: 1rem;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-radius: 0.7rem;
+}
+
+.App .make-comment img {
+  width: 40px;
+  height: 40px;
+}
+
+.App .make-comment form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.App .make-comment form textarea {
+  resize: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #c3c4ef;
+  border-radius: 0.5rem;
+  width: 500px;
+  min-height: 100px;
+}
+
+.App .make-comment form textarea:focus {
+  outline: none;
+  border: 1px solid #5457b6;
+}
+
+.App .make-comment form button {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.7rem 1.2rem;
+  background-color: #5457b6;
+  border: none;
+  color: white;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  -webkit-transition: 0.4s ease all;
+  transition: 0.4s ease all;
+}
+
+.App .make-comment form button:hover {
+  opacity: 0.5;
+}
+
+.App .delete-main-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #000000a1;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .delete-main-container .delete-container {
+  background-color: white;
+  z-index: 1000;
+  width: 380px;
+  padding: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.App .delete-main-container .delete-container h3 {
+  color: #324152;
+  margin-bottom: 1rem;
+}
+
+.App .delete-main-container .delete-container p {
+  margin-bottom: 1rem;
+  color: #67727e;
+}
+
+.App .delete-main-container .delete-container .delete-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  gap: 4%;
+}
+
+.App .delete-main-container .delete-container .delete-control button {
+  width: 48%;
+  padding: 0.9rem 0;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #67727e;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  -webkit-transition: 0.4s ease all;
+  transition: 0.4s ease all;
+}
+
+.App .delete-main-container .delete-container .delete-control button:hover {
+  opacity: 0.8;
+}
+
+.App .delete-main-container .delete-container .delete-control button.delete {
+  background-color: #ed6468;
+}
+
+@media (max-width: 700px) {
+  .App {
+    margin: 7rem 1rem;
+    overflow: hidden;
+  }
+  .App .main-container {
+    width: 100%;
+  }
+  .App .main-container .comment-container .comment, .App .main-container .comment-container .replay-comment {
+    padding: 0.7rem;
+    padding-bottom: 4rem;
+  }
+  .App .main-container .comment-container .comment .info, .App .main-container .comment-container .replay-comment .info {
+    gap: 0.8rem;
+  }
+  .App .main-container .comment-container .comment p, .App .main-container .comment-container .replay-comment p {
+    margin-right: 0rem;
+  }
+  .App .main-container .comment-container .comment .score, .App .main-container .comment-container .replay-comment .score {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    top: auto;
+    left: 0.7rem;
+    bottom: 0.7rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+  .App .main-container .comment-container .comment .replay, .App .main-container .comment-container .comment .control, .App .main-container .comment-container .replay-comment .replay, .App .main-container .comment-container .replay-comment .control {
+    top: auto;
+    right: 0.7rem;
+    bottom: 0.7rem;
+    padding: 0.5rem;
+  }
+  .App .main-container .comment-container .update-replay {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .App .main-container .comment-container .update-replay textarea {
+    width: 100%;
+  }
+  .App .make-comment {
+    width: 100%;
+    position: relative;
+    padding: 1rem 0.7rem;
+    padding-bottom: 4rem;
+    position: relative;
+  }
+  .App .make-comment img {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+  }
+  .App .make-comment form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+  }
+  .App .make-comment form textarea {
+    width: 100%;
+  }
+  .App .make-comment form button {
+    position: absolute;
+    right: 0.7rem;
+    bottom: 1rem;
+  }
+  .App .delete-main-container {
+    padding: 0.7rem;
+  }
+  .App .delete-main-container .delete-container {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+/*# sourceMappingURL=index.css.map */

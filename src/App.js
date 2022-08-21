@@ -1,23 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios'
+import React from 'react'
+import Comment from './components/Comment';
+import {MyCxt} from './context/MyContext' ;
+
+
 
 function App() {
+  const {data,setData,currentUser,setCurrentUser,RefreshPage,setRefreshPage,axiosUrl} = React.useContext(MyCxt);
+
+  const[newComment , setNewComment] = React.useState({crud_req : "new_comment" , make_comment : "" });
+
+
+  const Comments = data.map(com => {
+    return (
+      <Comment key={com.comment_id} data={com} currentU = {currentUser} />
+    )
+  })
+ 
+
+  const newCommentHandler = (e) => {
+    const name = e.target.name ;
+    const value = e.target.value ;
+    setNewComment(prevInputs => ({...prevInputs  , [name] : value}));
+  }
+
+  const newCommentSubmit = (e) => {
+    e.preventDefault();
+    axios.post(axiosUrl , JSON.stringify(newComment)).then(res =>{
+      console.log(res);
+      setNewComment({crud_req : "new_comment" , make_comment : "" });
+      setRefreshPage(prev => !prev);
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='main-container'>
+        {Comments}
+      </div>
+      <div className='make-comment'>
+        <img src={currentUser.photo} alt='avatar' />
+        <form onSubmit={newCommentSubmit}>
+          <textarea name='make_comment' placeholder='Add a comment' onChange={newCommentHandler} value={newComment.make_comment}/>
+          <button>SEND</button>
+        </form>
+      </div>
+      
     </div>
   );
 }
